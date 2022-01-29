@@ -1,0 +1,120 @@
+@import "./partial/variables";
+@import "./partial/reset";
+@import "./partial/mixin";
+// Generall CSS
+body {
+   @include display-flex(center, center, column);
+   width: 100vw;
+   height: 100vh;
+   background-color: $color-background;
+   color: $color-text;
+   background-image: url(../img/background.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   overflow-x: hidden;
+}
+.card {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   perspective: 600px;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+.content {
+   padding: 10px;
+   width: 100%;
+   max-width: 250px;
+   height: 100%;
+   max-height: 250px;
+   transition: transform 0.5s;
+   transform-style: preserve-3d;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.front,
+.back {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   border-radius: 5px;
+   backface-visibility: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.5rem;
+   color: white;
+   background-color: tomato;
+   font-weight: 600;
+}
+.back {
+   background-image: $l-gradient;
+   transform: rotateY(180deg);
+}
+a {
+   text-decoration: none;
+   display: inline-block;
+   position: relative;
+}
+.a-before-after {
+   display: block;
+   content: "";
+   background-color: $color-button-hover;
+   position: absolute;
+   z-index: 1;
+   transition: 0.3s linear;
+}
+span {
+   display: block;
+   padding: 15px 20px;
+   background-color: $color-text;
+   color: $color-button;
+   position: relative;
+}
+.btn-1::before {
+   @extend .a-before-after;
+   width: 0;
+   height: $button-border-width;
+   top: 0;
+   right: 0;
+   transition-delay: 0.3s;
+}
+.btn-1::after {
+   @extend .a-before-after;
+   width: 0;
+   height: $button-border-width;
+   bottom: 0;
+   left: 0;
+   transition-delay: 0.3s;
+}
+.btn-1:hover::before,
+.btn-1:hover::after {
+   width: 100%;
+   transition-delay: 0s;
+}
+.btn-1-1::before {
+   @extend .a-before-after;
+   width: $button-border-width;
+   height: 0;
+   top: 0;
+   left: 0;
+   transition-delay: 0s;
+}
+.btn-1-1::after {
+   @extend .a-before-after;
+   transition-delay: 0s;
+   width: $button-border-width;
+   height: 0;
+   bottom: 0;
+   right: 0;
+}
+.btn-1:hover .btn-1-1::before,
+.btn-1:hover .btn-1-1::after {
+   height: 100%;
+   transition-delay: 0.3s;
+}
+.content:hover {
+   transform: rotateY(180deg);
+}

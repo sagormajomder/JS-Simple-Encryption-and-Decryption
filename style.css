@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 62.5%;
+  }
+  h1 {
+    @apply my-20 text-center text-[2.4rem] md:text-[4rem];
+  }
+  h2 {
+    @apply text-[1.5rem] font-medium text-secondary md:text-[2.4rem];
+  }
+  input {
+    @apply p-3 px-4;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block  border-transparent text-center  font-medium text-secondary duration-500 md:text-3xl;
+  }
+
+  .btn-home {
+    @apply w-1/2 border-4 bg-slate-50 py-6 text-2xl hover:border-4 hover:border-slate-50  hover:bg-secondary hover:text-white md:w-0 md:basis-1/4;
+  }
+
+  .btn-submit {
+    @apply mt-4  border-2  px-6 py-2 text-xl  uppercase  hover:border-secondary md:text-2xl;
+  }
+
+  .msg {
+    @apply my-8 w-full max-w-[50rem] rounded-lg bg-white px-10 pb-12 pt-10 text-center;
+  }
+  .co {
+    @apply mt-8 block w-full rounded-lg border border-[#bfbfbf] text-xl outline-none  focus:border-2 focus:border-secondary md:text-2xl;
+  }
+
+  .field {
+    @apply h-24 max-h-[30.3rem]  resize-none overflow-hidden p-6 valid:border-2 valid:border-secondary;
+  }
+}

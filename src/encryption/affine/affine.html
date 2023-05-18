@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Affine Cipher Encryption</title>
+    <link rel="stylesheet" href="../../../style.css" />
+    <!--JS -->
+    <script defer src="../../commonJS/form.js"></script>
+    <script defer src="./affineEN.js"></script>
+  </head>
+  <body class="overflow-x-hidden bg-gradient-to-r from-primary to-secondary">
+    <div class="container mx-auto">
+      <h1 class="text-white">Affine Cipher Encryption</h1>
+
+      <!-- Main Div -->
+      <div class="mx-6 flex flex-col items-center">
+        <!-- Message -->
+        <div class="msg">
+          <h2>Input Your Message</h2>
+          <form id="encryptSubmit">
+            <textarea
+              id="text"
+              class="field co"
+              placeholder="Write Your Message.."
+              required></textarea>
+
+            <input
+              type="text"
+              name=""
+              id="key1"
+              placeholder="Enter Key"
+              class="co"
+              required />
+            <input
+              type="text"
+              name=""
+              id="key2"
+              placeholder="Enter Key"
+              class="co"
+              required />
+
+            <button type="submit" class="btn btn-submit">Submit</button>
+          </form>
+        </div>
+        <!-- encrytion -->
+        <div class="msg">
+          <h2>Encryption Message</h2>
+          <textarea class="field co" id="demo" readonly></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
